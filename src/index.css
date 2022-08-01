@@ -1,13 +1,880 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+}
+
+header nav a.logo {
+  font-family: Poppins;
+  font-weight: 800;
+  color: black;
+  font-size: 1.5vw;
+}
+header nav a.logo span {
+  color: #827dff;
+}
+header nav ul li a.nav-link {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 1.2vw;
+  color: #827dff;
+}
+header .offcanvas .offcanvas-header h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 2vw;
+  margin: 0;
+}
+header .offcanvas .offcanvas-header h5 span {
+  color: #827dff;
+}
+header .offcanvas .offcanvas-header h5 span.username {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  color: black;
+}
+header .offcanvas .offcanvas-header h5 p {
+  font-size: 1.4vw;
+  color: #827dff;
+}
+header .offcanvas .offcanvas-body form label {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+header .offcanvas .offcanvas-body form input {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+header .offcanvas .offcanvas-body form select {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+header .offcanvas .offcanvas-body form button {
+  margin-top: 4vh;
+  margin-right: 2vw;
+  padding: 1.7vh;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+}
+header .offcanvas .offcanvas-body form button.focus {
+  background-color: #ffb917;
+  color: white;
+}
+header .offcanvas .offcanvas-body form button.notFocus {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+}
+header .offcanvas .offcanvas-body form p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  color: red;
+}
+header .offcanvas .offcanvas-body button.account {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 2vh;
+  background-color: #ffb917;
+  color: white;
+}
+
+article section.hero {
+  background-image: url("./photos/bus.png");
+  background-repeat: no-repeat;
+  background-position: -25% 55%;
+  background-size: 65%;
+}
+article section.hero .image {
+  height: 80vh;
+}
+article section.hero .title {
+  margin-bottom: 8vh;
+}
+article section.hero .title h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  line-height: 9vh;
+  font-size: 3.2vw;
+  margin-bottom: 6vh;
+}
+article section.hero .title h1 span {
+  color: #827dff;
+}
+article section.hero .title a {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  background-color: #ffb917;
+  padding: 3vh;
+  font-size: 1.4vw;
+  color: white;
+}
+article section.admin .sidebar li.options {
+  margin-top: 2vh;
+}
+article section.admin .sidebar li.options a {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.admin .otherbar .title h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 7vh;
+}
+article section.admin .otherbar .nosched img {
+  height: 15vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+}
+article section.admin .otherbar .nosched p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  font-size: 1.5vw;
+}
+article section.admin .otherbar .profileTitle h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.admin .otherbar .profileInfo p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.admin .otherbar .button {
+  margin-bottom: 7vh;
+}
+article section.admin .otherbar .button button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #ffb917;
+  border: none;
+  color: white;
+  margin-right: 2vw;
+}
+article section.admin .otherbar .bookCard {
+  border: 1px solid #827dff;
+  border-radius: 2vh;
+  padding: 4vh;
+  margin-bottom: 5vh;
+}
+article section.admin .otherbar .bookCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.admin .otherbar .bookCard .company h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 1.7vw;
+}
+article section.admin .otherbar .bookCard .route p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.admin .otherbar .bookCard .route p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.admin .otherbar .bookCard .route p i {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+article section.admin .otherbar .bookCard .price p {
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.admin .otherbar .bookCard .seats p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.1vw;
+}
+article section.admin .otherbar .bookCard .seats p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.admin .otherbar .bookCard .bookNow button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 2vh;
+  color: white;
+  background-color: #ffb917;
+}
+article section.admin .modal .modal-header h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.admin .modal .modal-header h5 span {
+  color: #827dff;
+}
+article section.admin .modal .modal-footer button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #ffb917;
+  padding: 1.5vh;
+  border: none;
+  color: white;
+  margin-right: 2vw;
+}
+article section.publicSchedule .title {
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}
+article section.publicSchedule .title h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.publicSchedule .bookCard {
+  border: 1px solid #827dff;
+  border-radius: 2vh;
+  padding: 4vh;
+  margin-bottom: 5vh;
+}
+article section.publicSchedule .bookCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.publicSchedule .bookCard .company h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 1.7vw;
+}
+article section.publicSchedule .bookCard .route p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.publicSchedule .bookCard .route p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.publicSchedule .bookCard .route p i {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+article section.publicSchedule .bookCard .price p {
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.publicSchedule .bookCard .seats p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.1vw;
+}
+article section.publicSchedule .bookCard .seats p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.publicSchedule .bookCard .button button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 1.5vh;
+  background-color: #ffb917;
+  color: white;
+}
+article section.publicSchedule .form {
+  margin-bottom: 5vh;
+}
+article section.publicSchedule .form form button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  font-size: 0.9vw;
+  padding: 1.5vh;
+  color: white;
+  background-color: #ffb917;
+  margin-right: 2vw;
+}
+article section.publicSchedule .form form .input-group label {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #827dff;
+  color: white;
+}
+article section.publicSchedule .form form .input-group input, article section.publicSchedule .form form .input-group select {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .sidebar li.options {
+  margin-top: 2vh;
+}
+article section.passenger .sidebar li.options a {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .title h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 7vh;
+}
+article section.passenger .otherbar .profileTitle h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .profileInfo p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .otherbar .bookCard {
+  border: 1px solid #827dff;
+  border-radius: 2vh;
+  padding: 4vh;
+  margin-bottom: 5vh;
+}
+article section.passenger .otherbar .bookCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.passenger .otherbar .bookCard .company h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 1.7vw;
+}
+article section.passenger .otherbar .bookCard .route p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.passenger .otherbar .bookCard .route p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .route p i {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+article section.passenger .otherbar .bookCard .price p {
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4vw;
+}
+article section.passenger .otherbar .bookCard .seats p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  font-size: 1.1vw;
+}
+article section.passenger .otherbar .bookCard .seats p span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .bookNow button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 2vh;
+  color: white;
+  background-color: #ffb917;
+}
+article section.passenger .otherbar .bookCard .modal .modal-header h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatMap .seats {
+  margin-bottom: 1vh;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatMap .seats .seat {
+  display: inline;
+  border: 1px solid black;
+  margin-right: 1vw;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatMap .seats .seat input {
+  margin: 0.7vh;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatMap h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .titleMenu h6, article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .titleMenu h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .passForm .form-floating label, article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .passForm .form-check label {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .cfrmbtn button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 1.4vh;
+  color: white;
+  background-color: #ffb917;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .seatPrice h6 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-body .seatForm .seatPrice h6 span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .modal .modal-footer button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #ffb917;
+  padding: 1.5vh;
+  border: none;
+  color: white;
+  margin-right: 2vw;
+}
+article section.passenger .otherbar .bookCard .qr img {
+  height: 24vh;
+}
+article section.passenger .otherbar .bookCard .passengers h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .passengers .passenger {
+  margin-bottom: 1vh;
+}
+article section.passenger .otherbar .bookCard .passengers .passenger p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.passenger .otherbar .bookCard .passengers .passenger p span {
+  margin-right: 2vw;
+}
+article section.passenger .otherbar .bookCard .dlBtn button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 2vh;
+  color: white;
+  background-color: #ffb917;
+}
+article section.passenger .otherbar .form {
+  margin-bottom: 5vh;
+}
+article section.passenger .otherbar .form form button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  font-size: 0.9vw;
+  padding: 1.5vh;
+  color: white;
+  background-color: #ffb917;
+  margin-right: 2vw;
+}
+article section.passenger .otherbar .form form .input-group label {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #827dff;
+  color: white;
+}
+article section.passenger .otherbar .form form .input-group input, article section.passenger .otherbar .form form .input-group select {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.payment .title h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  margin-top: 3vh;
+  font-size: 2.5vw;
+  margin-bottom: 4vh;
+}
+article section.payment .modes .accordion-item {
+  border: 1px solid #827dff;
+  margin-bottom: 3vh;
+}
+article section.payment .modes .accordion-item:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.payment .modes .accordion-item h2.accordion-header button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .modes .accordion-item h2.accordion-header button span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  margin-left: 1vw;
+}
+article section.payment .modes .accordion-item .accordion-body h5 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body h5 span.discP {
+  margin-left: 1vw;
+}
+article section.payment .modes .accordion-item .accordion-body h5 span.totalP {
+  text-decoration: line-through;
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  margin-left: 1vw;
+}
+article section.payment .modes .accordion-item .accordion-body .form-floating label {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body .form-floating input {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body .cardImg img {
+  height: 8vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+article section.payment .modes .accordion-item .accordion-body .paybtn button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 2.5vh;
+  background-color: #ffb917;
+  color: white;
+}
+article section.payment .modes .accordion-item .accordion-body .modal .modal-header h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body .modal .modal-body h3 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body .modal .modal-body h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-weight: 600;
+}
+article section.payment .modes .accordion-item .accordion-body .modal .modal-body p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.payment .modes .accordion-item .accordion-body .modal .modal-footer button {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  background-color: #ffb917;
+  padding: 1.5vh;
+  border: none;
+  color: white;
+  margin-right: 2vw;
+}
+article section.payment .bookDetail {
+  margin-bottom: 5vh;
+}
+article section.payment .bookDetail .bookCard {
+  border: 1px solid #827dff;
+  padding: 4vh;
+  margin: 0;
+}
+article section.payment .bookDetail .bookCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.payment .bookDetail .bookCard .title h4 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  color: #827dff;
+}
+article section.payment .bookDetail .bookCard hr {
+  margin: 0;
+  padding: 0;
+}
+article section.payment .bookDetail .bookCard .depArrPass {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+article section.payment .bookDetail .bookCard .depArrPass .icon i {
+  font-size: 4vh;
+  color: #827dff;
+}
+article section.payment .bookDetail .bookCard .depArrPass .detail h5, article section.payment .bookDetail .bookCard .depArrPass .detail h4 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+}
+article section.payment .bookDetail .bookCard .depArrPass .detail h5 span, article section.payment .bookDetail .bookCard .depArrPass .detail h4 span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.payment .bookDetail .bookCard .depArrPass .detail p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.payment .bookDetail .bookCard .depArrPass .passCard {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+article section.success .qr {
+  margin-bottom: 9vh;
+  height: 70vh;
+}
+article section.success .qr img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+}
+article section.success .details h1 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  margin-top: 3vh;
+  font-size: 4vw;
+  margin-bottom: 4vh;
+  color: #827dff;
+}
+article section.success .details h5.receipt {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-weight: 600;
+}
+article section.success .details h5.receipt span {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+}
+article section.success .details .busCard {
+  padding: 2vh;
+}
+article section.success .details .busCard .bus {
+  border: 1px solid #827dff;
+  padding: 3vh;
+  margin-bottom: 3vh;
+}
+article section.success .details .busCard .bus:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.success .details .busCard .bus .menu {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+article section.success .details .busCard .bus .menu h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-weight: 600;
+}
+article section.success .details .busCard .bus .menu h3 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.success .details .busCard .bus .value {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+article section.success .details .busCard .bus .value p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  font-size: 1.3vw;
+}
+article section.success .details button.prntBtn {
+  padding: 2vh;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  color: white;
+  background-color: #ffb917;
+  margin-right: 2vw;
+}
+article section.success .passenger {
+  margin-bottom: 20vh;
+}
+article section.success .passenger .title {
+  margin-bottom: 5vh;
+}
+article section.success .passenger .title h2 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+}
+article section.success .passenger .menu {
+  margin-bottom: 2vh;
+}
+article section.success .passenger .menu h4 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+article section.success .passenger .menu h4 span {
+  margin-left: 1.5vw;
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  text-decoration: line-through;
+}
+article section.success .passenger .value {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+article section.success .passenger .value p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  font-size: 1.6vw;
+  text-align: center;
+}
+article section.success .passenger .passCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+article section.success .passenger .price {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+article section.success .passenger .price h4 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+article section.success .passenger .price h4 span {
+  margin-left: 1.5vw;
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  text-decoration: line-through;
+}
+article section.error .img img {
+  height: 75vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+article section.error .img button {
+  margin-top: 3vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 1vh;
+  padding: 1.5vh;
+  color: white;
+  background-color: #ffb917;
+}
+
+aside.contactUs {
+  position: relative;
+}
+aside.contactUs button.contactBtn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 4vw;
+  bottom: -7vh;
+  background-color: #827dff;
+  border: none;
+  border-radius: 50%;
+}
+aside.contactUs button.contactBtn i {
+  color: white;
+  font-size: 1.5vw;
+}
+aside.contactUs .offcanvas .offcanvas-header h5 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  font-size: 2vw;
+  margin: 0;
+}
+aside.contactUs .offcanvas .offcanvas-header h5 span {
+  color: #827dff;
 }
