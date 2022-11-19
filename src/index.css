@@ -93,6 +93,50 @@ header .offcanvas .offcanvas-body button.account {
   background-color: #ffb917;
   color: white;
 }
+header .offcanvas .offcanvas-body .loginCard {
+  margin-bottom: 2vh;
+  border: 1px solid #827dff;
+  border-radius: 2vh;
+  padding: 2vh;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+header .offcanvas .offcanvas-body .loginCard:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+header .offcanvas .offcanvas-body .loginCard button {
+  background-color: white;
+  border: none;
+}
+header .offcanvas .offcanvas-body .loginCard .logo i {
+  font-size: 6vh;
+}
+header .offcanvas .offcanvas-body .loginCard .user h4 {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  text-align: left;
+}
+header .offcanvas .offcanvas-body .loginCard .user p {
+  font-family: Quicksand;
+  font-weight: 400;
+  color: black;
+  text-align: left;
+}
+header .offcanvas .offcanvas-body .loginCard .form {
+  margin-top: 2vh;
+}
+header .offcanvas .offcanvas-body .loginCard .form form label {
+  text-align: left;
+}
+header .offcanvas .offcanvas-body h5.or {
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  margin: 3vh;
+}
 
 article section.hero {
   background-image: url("./photos/bus.png");
@@ -178,6 +222,20 @@ article section.admin .otherbar .button button {
   color: white;
   margin-right: 2vw;
 }
+article section.admin .otherbar .schedules {
+  height: 60vh;
+  overflow-y: scroll;
+}
+article section.admin .otherbar .schedules:hover::-webkit-scrollbar-thumb {
+  background: #888;
+}
+article section.admin .otherbar .schedules::-webkit-scrollbar {
+  width: 10px;
+}
+article section.admin .otherbar .schedules::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  background: transparent;
+}
 article section.admin .otherbar .bookCard {
   border: 1px solid #827dff;
   border-radius: 2vh;
@@ -226,15 +284,20 @@ article section.admin .otherbar .bookCard .seats p span {
   font-weight: 400;
   color: black;
 }
-article section.admin .otherbar .bookCard .bookNow button {
-  font-family: Quicksand;
-  font-weight: 700;
-  color: black;
+article section.admin .otherbar .bookCard .modify button {
+  background-color: white;
   border: none;
-  border-radius: 1vh;
-  padding: 2vh;
-  color: white;
-  background-color: #ffb917;
+  float: right;
+  margin-left: 0.5vw;
+}
+article section.admin .otherbar .bookCard .modify button i {
+  font-size: 1.5vw;
+}
+article section.admin .otherbar .bookCard .modify button i.red {
+  color: red;
+}
+article section.admin .otherbar .bookCard .modify button i.green {
+  color: green;
 }
 article section.admin .modal .modal-header h5 {
   font-family: Poppins;
@@ -348,6 +411,20 @@ article section.publicSchedule .form form .input-group input, article section.pu
   font-weight: 400;
   color: black;
 }
+article section.publicSchedule .nosched img {
+  height: 15vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+}
+article section.publicSchedule .nosched p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  font-size: 1.5vw;
+}
 article section.passenger .sidebar li.options {
   margin-top: 2vh;
 }
@@ -361,6 +438,20 @@ article section.passenger .otherbar .title h1 {
   font-weight: 700;
   color: black;
   margin-bottom: 7vh;
+}
+article section.passenger .otherbar .nosched img {
+  height: 15vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+}
+article section.passenger .otherbar .nosched p {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  font-size: 1.5vw;
 }
 article section.passenger .otherbar .profileTitle h5 {
   font-family: Quicksand;
@@ -877,4 +968,21 @@ aside.contactUs .offcanvas .offcanvas-header h5 {
 }
 aside.contactUs .offcanvas .offcanvas-header h5 span {
   color: #827dff;
+}
+aside.contactUs .offcanvas .offcanvas-body {
+  position: relative;
+}
+aside.contactUs .offcanvas .offcanvas-body h6 {
+  font-family: Quicksand;
+  font-weight: 700;
+  color: black;
+  line-height: 5vh;
+}
+aside.contactUs .offcanvas .offcanvas-body h6 span {
+  color: #827dff;
+}
+aside.contactUs .offcanvas .offcanvas-body form {
+  position: absolute;
+  bottom: 2vh;
+  width: 92%;
 }

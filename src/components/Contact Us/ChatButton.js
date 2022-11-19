@@ -1,13 +1,13 @@
 import React from 'react'
-import ContactForm from './ContactForm'
+import ChatForm from './ChatForm'
 
-const ContactButton = () => {
+const ChatButton = () => {
     return (
         <aside className='contactUs'>
             <button className='contactBtn' type="button" data-bs-toggle="offcanvas" data-bs-target="#contactUs" aria-controls="contactUs"><i className="bi bi-chat-fill"></i></button>
-            <ContactForm/>
+            <ChatForm/>
         </aside>
     )
 }
 
-export default ContactButton
+export default ChatButton

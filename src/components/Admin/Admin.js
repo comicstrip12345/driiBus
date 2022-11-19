@@ -26,7 +26,7 @@ const Admin = () => {
                                     <h5>Name:</h5>
                                 </div>
                                 <div className='col-9 profileInfo'>
-                                    <p>Adriano</p>
+                                    <p>{user.name}</p>
                                 </div>
                                 <div className='col-3 profileTitle mb-4'>
                                     <h5>Username:</h5>

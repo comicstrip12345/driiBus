@@ -6,16 +6,17 @@ import { useNavigate } from 'react-router-dom'
 
 const Offcanvas = () => {
     const [form, setForm]= useState("Sign In")
+    const [name, setname]= useState("")
     const [username, setusername]= useState("")
     const [email, setemail]= useState("")
     const [account, setaccount]= useState("")
-    const [code, setcode]= useState("")
-    const [codeValid, setcodeValid]= useState(true)
     const [password, setpassword]= useState("")
     const [conpassword, setconpassword]= useState("")
     const [usernameValid, setusernameValid]= useState(true)
     const [passwordValid, setpasswordValid]= useState(true)
+    const [passwordValid2, setpasswordValid2]= useState(true)
     const [closeCanvas,setCloseCanvas] = useState("")
+    const [loginPassword,setLoginPassword] = useState('')
 
     const navigate = useNavigate()
 
@@ -33,14 +34,13 @@ const Offcanvas = () => {
         e.preventDefault()
         if(password === conpassword){
             dispatch(addUsers({
-                username,account,email,password
+                name,username,account,email,password
             }))
             setpasswordValid(true)
             Swal.fire({
                 icon:'success',
                 title:'Congratulations. You have signed up. Proceed to log in.'
             })
-            console.log("signed in");
         }
         else{
             console.log("error");
@@ -52,16 +52,14 @@ const Offcanvas = () => {
         const searchFind = users.find((user)=>username === user.username)
         
         if(!searchFind){
-            console.log("error");
             setusernameValid(false)
         }
         else if(searchFind.username === username && searchFind.password === password){
-            console.log("signed in");
             setusernameValid(true)
             setpasswordValid(true)
             setCloseCanvas("offcanvas")
             dispatch(addLogin({
-                username,password,account:searchFind.account,email:searchFind.email
+                name:searchFind.name,username,password,account:searchFind.account,email:searchFind.email
             }))
             Swal.fire({
                 icon:'success',
@@ -88,16 +86,23 @@ const Offcanvas = () => {
             setpasswordValid(false)
         }
     }
+    // const showLoginPW=(e)=>{
+        
+    // }
     return (
         <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             {form === "Sign Up"?
                 <>
-                    <div className="offcanvas-header">
+                    <div className="offcanvas-header pt-3 pb-1">
                         <h5 className="offcanvas-title" id="offcanvasExampleLabel">Sign <span>Up</span></h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div className="offcanvas-body">
+                    <div className="offcanvas-body pt-2 pb-2">
                         <form>
+                            <div className="form-floating mb-3">
+                                <input type="text" className="form-control" id="floatingInput" placeholder="name" onChange={(e)=>setname(e.target.value)}/>
+                                <label for="floatingInput">Name</label>
+                            </div>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="floatingInput" placeholder="username" onChange={(e)=>setusername(e.target.value)}/>
                                 <label for="floatingInput">Username</label>
@@ -126,11 +131,81 @@ const Offcanvas = () => {
                     </div>
                 </> :
                 <>
-                    <div className="offcanvas-header">
+                    <div className="offcanvas-header pt-3 pb-1">
                         <h5 className="offcanvas-title" id="offcanvasExampleLabel">Sign <span>In</span></h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div className="offcanvas-body">
+                    <div className="offcanvas-body pt-2 pb-2">
+                        {users && 
+                            <>
+                                {users.map((item,index)=>(
+                                    <div className='row loginCard' key={index}>
+                                        <button onClick={(e)=>{
+                                            e.preventDefault()
+                                            if(!loginPassword){
+                                                setLoginPassword(`user${index}`)
+                                            }
+                                            else{
+                                                setLoginPassword(false)
+                                            }
+                                        }}>
+                                            <div className='row'>
+                                                <div className='col-2 logo d-flex align-items-center'>
+                                                    <i class="bi bi-person-circle"></i>
+                                                </div>
+                                                <div className='col-10 user'>
+                                                    <h4 className='m-0'>{item.username}</h4>
+                                                    <p className='m-0'>{item.account}</p>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        {loginPassword === `user${index}` && 
+                                            <div className='col-12 form'>
+                                                <form onSubmit={(e)=>{
+                                                    e.preventDefault()
+                                                    if(password === item.password){
+                                                        dispatch(addLogin({
+                                                            name:item.name,
+                                                            username:item.username,
+                                                            password:item.password,
+                                                            account:item.account,
+                                                            email:item.email
+                                                        }))
+                                                        Swal.fire({
+                                                            icon:'success',
+                                                            title:`Congratulations. You have logged in as ${item.account}.`,
+                                                            allowOutsideClick: false,
+                                                            showConfirmButton:true
+                                                        }).then((result)=>{
+                                                            if(result.isConfirmed){
+                                                                if(item.account === "Admin"){
+                                                                    navigate('/admin')
+                                                                    window.location.reload()
+                                                                }
+                                                                else if(item.account === "Passenger"){
+                                                                    navigate('/passenger')
+                                                                    window.location.reload()
+                                                                }
+                                                            }
+                                                        })
+                                                    }
+                                                    else{
+                                                        setpasswordValid2(false)
+                                                    }
+                                                }}>
+                                                    <div className="form-floating mb-2">
+                                                        <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={(e)=>setpassword(e.target.value)}/>
+                                                        <label for="floatingPassword">Password</label>
+                                                        {!passwordValid2 && <p>Password is incorrect.</p>}
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        }
+                                    </div>
+                                ))}
+                            </>
+                        }
+                        <h5 className='or'>OR</h5>
                         <form>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="floatingInput" placeholder="username" onChange={(e)=>setusername(e.target.value)}/>

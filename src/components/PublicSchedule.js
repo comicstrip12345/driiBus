@@ -151,7 +151,10 @@ const PublicSchedule = () => {
                                     </>
                                 }
                             </>:
-                            <p>No Schedule yet.</p>
+                            <div className='col-12 nosched'>
+                                <img src={require('../photos/no-schedule.png')} alt='nosched'/>
+                                <p>No Schedule yet</p>
+                            </div>
                         }
                     </div>
                 </div>

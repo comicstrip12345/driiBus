@@ -29,7 +29,7 @@ const PassMngBkng = () => {
                                                 <h5>{bookInfo.paymentDetails.bookingDetail.busCompany}</h5>
                                             </div>
                                             <div className='col-6 route'>
-                                                <p> {origin}<span>({bookInfo.paymentDetails.bookingDetail.startTime})</span><i className="bi bi-arrow-right-square"></i> {bookInfo.paymentDetails.bookingDetail.destination}<span>({bookInfo.paymentDetails.bookingDetail.endTime})</span></p>
+                                                <p>{bookInfo.paymentDetails.bookingDetail.origin}<span>({bookInfo.paymentDetails.bookingDetail.startTime})</span><i className="bi bi-arrow-right-square"></i> {bookInfo.paymentDetails.bookingDetail.destination}<span>({bookInfo.paymentDetails.bookingDetail.endTime})</span></p>
                                             </div>
                                             <div className='col-3 price'>
                                                 <p>P{bookInfo.paymentDetails.price}.00</p>
@@ -65,7 +65,10 @@ const PassMngBkng = () => {
                                         </div>
                                     </div>
                                 :
-                                    <p>ssasd</p>
+                                <div className='col-12 nosched'>
+                                    <img src={require('../../photos/no-ticket.png')} alt='nosched'/>
+                                    <p>No Tickets yet</p>
+                                </div>
                                 }
                             </div>
                         </div>

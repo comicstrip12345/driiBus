@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ContactButton from './Contact Us/ContactButton'
+import ChatButton from './Contact Us/ChatButton'
 
 const Hero = () => {
     
@@ -19,7 +19,7 @@ const Hero = () => {
                         </div>
                     </div>      
                 </div>
-                <ContactButton/>
+                <ChatButton/>
             </section>
         </article>
     )

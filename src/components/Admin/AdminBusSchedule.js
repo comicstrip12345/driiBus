@@ -2,8 +2,10 @@ import React from 'react'
 import Sidebar from '../Sidebar'
 import Modal from './Modal'
 import { useSelector,useDispatch } from 'react-redux/es/exports'
-import { postPublic } from '../Redux/busSlice'
+import { postPublic,deleteSchedule } from '../Redux/busSlice'
 import Swal from 'sweetalert2'
+import ModalEdit from './ModalEdit'
+import { ToastContainer, toast } from 'react-toastify';
 
 const AdminBusSchedule = () => {
     const schedules = useSelector((schedule)=>schedule.booking.busSched)
@@ -44,6 +46,7 @@ const AdminBusSchedule = () => {
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Schedule</button>
                                     <button class="btn btn-primary" onClick={publicSubmit}>Post to public</button>
                                 </div>
+                                <div className='schedules'>
                                 {schedules.length === 0 ?
                                     <div className='col-12 nosched'>
                                         <img src={require('../../photos/no-schedule.png')} alt='nosched'/>
@@ -60,8 +63,26 @@ const AdminBusSchedule = () => {
                                                 <div className='col-6 route'>
                                                     <p>{item.origin} <span>({item.startTime})</span><i class="bi bi-arrow-right-square"></i>{item.destination} <span>({item.endTime})</span></p>
                                                 </div>
-                                                <div className='col-3 price'>
+                                                <div className='col-1 price'>
                                                     <p>P{item.price}.00</p>
+                                                </div>
+                                                <div className='col-2 modify'>
+                                                    <button onClick={() => {
+                                                        dispatch(deleteSchedule(item.id))
+                                                        toast.success('Schedule Removed', {
+                                                            position: "top-right",
+                                                            autoClose: 5000,
+                                                            hideProgressBar: false,
+                                                            closeOnClick: true,
+                                                            pauseOnHover: true,
+                                                            draggable: false,
+                                                            progress: undefined,
+                                                            theme: 'colored'
+                                                        });
+                                                    }}>
+                                                        <i class="bi bi-x-square-fill red"></i>
+                                                    </button>
+                                                    <button type='button' data-bs-toggle="modal" data-bs-target={`#editSched${index}`}><i class="bi bi-pencil-fill green"></i></button>
                                                 </div>
                                                 <div className='col-3 seats'>
                                                     <p>Date: <span>{item.date}</span></p>
@@ -74,22 +95,31 @@ const AdminBusSchedule = () => {
                                                     <p>Total Seats: <span>{item.totalSeats}</span></p>
                                                     <p>Available Seats: <span>{item.seatAvail}</span></p>
                                                 </div>
-                                                <div className='col-4 bookNow'>
-                                                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                                                        See Available Seats
-                                                    </button>
-                                                </div>
                                             </div>
+                                            <ModalEdit 
+                                                id={`editSched${index}`} 
+                                                origin={item.origin}
+                                                destination={item.destination}
+                                                startTime={item.startTime}
+                                                endTime={item.endTime}
+                                                date={item.date}
+                                                stop={item.stop}
+                                                busCompany={item.busCompany}
+                                                totalSeats={item.totalSeats}
+                                                price={item.price}
+                                                schedId={item.id}
+                                            />
                                         </div>
                                         ))}
                                     </>
-                                    
                                 }
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <Modal/>
+                <ToastContainer/>
             </section>
         </article>
     )

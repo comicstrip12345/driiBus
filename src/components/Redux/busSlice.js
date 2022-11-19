@@ -33,6 +33,7 @@ const busSlice = createSlice({
         addUsers:(state,action)=>{
             state.signUp.push(action.payload)
             localStorage.setItem('users',JSON.stringify(state.signUp))
+            state.userStorage = [...state.signUp]
         },
         addLogin:(state,action)=>{
             localStorage.setItem('login', JSON.stringify(action.payload))
@@ -42,6 +43,14 @@ const busSlice = createSlice({
         },
         addSchedule:(state,action)=>{
             state.busSched.push(action.payload)
+        },
+        editSchedule:(state,action)=>{
+            const updateSched = state.busSched.map((sched)=>sched.id === action.payload.id ? action.payload : sched)
+            state.busSched = updateSched
+        },
+        deleteSchedule:(state,action)=>{
+            const deleteSched = state.busSched.filter((sched)=>sched.id !== action.payload)
+            state.busSched = deleteSched
         },
         postPublic:(state,action)=>{
             localStorage.setItem('schedule',JSON.stringify(state.busSched))
@@ -74,4 +83,4 @@ const busSlice = createSlice({
 })
 
 export default busSlice.reducer
-export const {addUsers,addLogin,logout,addSchedule,postPublic,addSeat,addPrice,addBooking,addPassNames,removePassNames,addPayBookDetails,addReceiptNum} = busSlice.actions
+export const {addUsers,addLogin,logout,addSchedule,editSchedule,deleteSchedule,postPublic,addSeat,addPrice,addBooking,addPassNames,removePassNames,addPayBookDetails,addReceiptNum} = busSlice.actions

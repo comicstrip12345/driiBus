@@ -112,6 +112,52 @@ header{
                 background-color: #ffb917;
                 color: white;
             }
+            .loginCard{
+                margin-bottom: 2vh;
+                border: 1px solid #827dff;
+                border-radius: 2vh;
+                padding: 2vh;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+
+                &:hover{
+                    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+                }
+                button{
+                    background-color: white;
+                    border: none;
+                }
+                .logo{
+                    i{
+                        font-size: 6vh;
+                    }
+                }
+                .user{
+                    h4{
+                        @include headerBoldStyle();
+                        text-align: left;
+                    }
+                    p{
+                        @include contentRegStyle();
+                        text-align: left;
+                    }
+                }
+                .form{
+                    margin-top: 2vh;
+
+                    form{
+                        label{
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            h5.or{
+                @include headerBoldStyle();
+                text-align: center;
+                margin: 3vh;
+            }
         }
     }
 }
@@ -197,6 +243,26 @@ article{
                     margin-right: 2vw;
                 }
             }
+            .schedules{
+                height: 60vh;
+                overflow-y: scroll;
+                
+                &:hover{
+                    &::-webkit-scrollbar-thumb {
+                        background: #888;
+                        // background: transparent;
+                    }
+                }
+                &::-webkit-scrollbar {
+                    width: 10px;
+                    
+                }
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    background: transparent;
+                }
+                
+            }
             .bookCard{
                 border: 1px solid #827dff;
                 border-radius: 2vh;
@@ -243,12 +309,23 @@ article{
                         }
                     }
                 }
-                .bookNow{
+                .modify{
                     button{
-                        @include buttonStyle();
-                        padding: 2vh;
-                        color: white;
-                        background-color: #ffb917;
+                        background-color: white;
+                        border: none;
+                        float: right;
+                        margin-left: 0.5vw;
+
+                        i{
+                            font-size: 1.5vw;
+
+                            &.red{
+                                color: red;
+                            }
+                            &.green{
+                                color: green;
+                            }
+                        }
                     }
                 }
             }
@@ -362,6 +439,18 @@ article{
                 }
             }
         }
+        .nosched{
+            img{
+                height: 15vh;
+                @include marginCenter();
+                margin-bottom: 2vh;
+            }
+            p{
+                @include contentBoldStyle();
+                text-align: center;
+                font-size: 1.5vw;
+            }
+        }
     }
     section.passenger{
         .sidebar{
@@ -378,6 +467,18 @@ article{
                 h1{
                     @include headerBoldStyle();
                     margin-bottom: 7vh;
+                }
+            }
+            .nosched{
+                img{
+                    height: 15vh;
+                    @include marginCenter();
+                    margin-bottom: 2vh;
+                }
+                p{
+                    @include contentBoldStyle();
+                    text-align: center;
+                    font-size: 1.5vw;
                 }
             }
             .profileTitle{
@@ -879,6 +980,39 @@ aside.contactUs{
 
                 span{
                     color: #827dff;
+                }
+            }
+        }
+        .offcanvas-body{
+            position: relative;
+            
+            h6{
+                @include contentBoldStyle();
+                line-height: 5vh;
+
+                span{
+                    color: #827dff;
+                }
+            }
+            // .message{
+            //     position: absolute;
+            //         // bottom: 2vh;
+            //         bottom: 0;
+            // }
+            .form{
+                
+            }
+            form{
+                position: absolute;
+                bottom: 2vh;
+                width: 92%;
+
+                .form-floating{
+                    
+
+                    input{
+                        
+                    }
                 }
             }
         }

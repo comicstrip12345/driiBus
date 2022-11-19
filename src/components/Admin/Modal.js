@@ -12,16 +12,16 @@ const Modal = () => {
     const [endTime,setendTime] = useState("")
     const [busCompany,setbusCompany] = useState("")
     const [totalSeats,settotalSeats] = useState(0)
-    const [seatAvail,setseatAvail] = useState(0)
     const [price,setprice] = useState(0)
     const [availSeat,setAvailSeat] = useState(0)
     const [disable,setDisable] = useState(false)
-    
+
+    const index = Math.floor(Math.random() * 1000)
     const dispatch = useDispatch()
     const submitSchedule=(e)=>{
         e.preventDefault()
         dispatch(addSchedule({
-            origin,destination,stop,date,startTime,endTime,busCompany,totalSeats,seatAvail,price
+            id: index,origin,destination,stop,date,startTime,endTime,busCompany,totalSeats,seatAvail: totalSeats,price
         }))
         Swal.fire({
             icon:'success',
@@ -127,12 +127,6 @@ const Modal = () => {
                                         </>
                                         }
                                     </select>
-                                </div>
-                            </div>
-                            <div className='col-4'>
-                                <div className="input-group mb-3">
-                                    <label className="input-group-text" htmlFor="inputGroupSelect01">Available Seats</label>
-                                    <input className="form-control" type='number' onChange={(e)=> setseatAvail(e.target.value)}/>
                                 </div>
                             </div>
                             <div className='col-4'>

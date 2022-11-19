@@ -12,7 +12,6 @@ import PassPubBusSched from './components/Passenger/PassPubBusSched'
 import PassMngBkng from './components/Passenger/PassMngBkng'
 import Payment from './components/Passenger/Payment'
 import PaymentSuccess from './components/Passenger/PaymentSuccess'
-import ContactButton from './components/Contact Us/ContactButton'
 import Error404 from './components/Error404'
 
 const App = () => {
